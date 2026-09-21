@@ -1,0 +1,21 @@
+{
+  "name": "stellar-stream-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Continuous linear money-streaming protocol monorepo on Stellar Soroban",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@10.30.1",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
