@@ -2,7 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Activity, PlusCircle, Layers, Wallet } from 'lucide-react';
+import { Activity, PlusCircle, Layers } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const WalletButton = dynamic(() => import('./WalletButton'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-9 w-36 animate-pulse rounded-xl bg-stellar-hover/60" />
+  ),
+});
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -54,7 +62,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right Section: Network Badge & Wallet Slot */}
+        {/* Right Section: Network Badge & Wallet Connection */}
         <div className="flex items-center space-x-3">
           <div className="hidden sm:flex items-center space-x-2 rounded-xl border border-stellar-border/70 bg-stellar-card/40 px-3 py-1.5 text-xs text-slate-300">
             <span className="relative flex h-2 w-2">
@@ -64,16 +72,7 @@ export default function Navbar() {
             <span className="font-medium">Testnet</span>
           </div>
 
-          <div id="navbar-wallet-slot">
-            <button
-              type="button"
-              id="wallet-connect-btn"
-              className="flex items-center space-x-2 rounded-xl border border-cyan-500/40 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition-all hover:border-cyan-400 hover:from-cyan-500/20 hover:to-emerald-500/20 hover:shadow-lg hover:shadow-cyan-500/10"
-            >
-              <Wallet className="h-4 w-4 text-stellar-cyan" />
-              <span>Connect Wallet</span>
-            </button>
-          </div>
+          <WalletButton />
         </div>
       </div>
     </nav>
