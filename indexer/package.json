@@ -1,0 +1,29 @@
+{
+  "name": "indexer",
+  "version": "0.1.0",
+  "description": "StellarStream Soroban event indexing and REST API server",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "clean": "rm -rf dist *.sqlite *.db"
+  },
+  "dependencies": {
+    "@stellar-stream/sdk": "workspace:*",
+    "@stellar/stellar-sdk": "^13.0.0",
+    "better-sqlite3": "^11.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.19",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}
