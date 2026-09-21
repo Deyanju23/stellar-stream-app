@@ -1,0 +1,22 @@
+{
+  "name": "@stellar-stream/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for StellarStream Soroban contract",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --test dist/__tests__/**/*.test.js || tsx --test src/__tests__/**/*.test.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.19",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}
